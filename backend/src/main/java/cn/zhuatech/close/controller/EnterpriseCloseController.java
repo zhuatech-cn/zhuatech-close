@@ -1,0 +1,3 @@
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
+package cn.zhuatech.close.controller;import cn.zhuatech.close.common.ApiResponse;import cn.zhuatech.close.service.EnterpriseCloseService;import jakarta.validation.Valid;import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/enterprise/close") public class EnterpriseCloseController {private final EnterpriseCloseService service;public EnterpriseCloseController(EnterpriseCloseService service){this.service=service;}@PostMapping("/validate-trial-balance") ApiResponse<EnterpriseCloseService.ValidationResult> validate(@Valid @RequestBody EnterpriseCloseService.TrialBalanceRequest request){return ApiResponse.ok(service.validate(request));}}
