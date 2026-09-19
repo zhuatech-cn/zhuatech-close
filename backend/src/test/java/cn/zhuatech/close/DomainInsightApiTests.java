@@ -9,9 +9,15 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @SpringBootTest @AutoConfigureMockMvc
 class DomainInsightApiTests {
     @Autowired MockMvc mvc;
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void domainInsightProducesAuditableDecision() throws Exception {
         mvc.perform(post("/api/insights/close").with(httpBasic("operator","operator123"))
             .contentType(MediaType.APPLICATION_JSON).content("{\"totalTasks\":10,\"completedTasks\":9,\"unresolvedReconciliations\":0,\"unpostedJournals\":0,\"validationErrors\":0}"))
